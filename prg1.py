@@ -43,14 +43,11 @@ def aStarAlgo(start_node, stop_node):
     print('path does not exist!')
     return None
 
-
-
 def get_neighbours(v):
     if v in Graph_nodes:
         return Graph_nodes[v]
     else:
         return None
-
 
 def heuristic(n):
     H_dist = {
@@ -66,7 +63,6 @@ def heuristic(n):
         'J': 0
     }
     return H_dist[n]
-
 
 Graph_nodes = {
     'A': [('B', 6), ('F', 3)],
