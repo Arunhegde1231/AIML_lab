@@ -3,7 +3,7 @@ import pandas as pd
 from pandas import DataFrame
 
 # df_tennis = DataFrame.from
-df_tennis = pd.read_csv('p4.csv')
+df_tennis = pd.read_csv('prg4.csv')
 
 # Calculate the Entropy of given probability
 def entropy(probs):
@@ -93,7 +93,7 @@ def test(query, tree, default=None):
     if query[attribute] not in tree[attribute].keys():
         return default
     result = tree[attribute][query[attribute]]
-    return func(query, result) if isinstance(result, dict) else result
+    return test(query, result) if isinstance(result, dict) else result
 query = {"Outlook": "Sunny", "Temperature": "Hot", "Humidity": "High", "Wind": "Weak"}
 ans = test(query, tree)
 print('Can tennis be played? : '+ans)
