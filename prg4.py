@@ -62,7 +62,6 @@ def id3(df, target_attribute_name, attribute_names, default_class=None):
 attribute_names = list(df_tennis.columns)
 attribute_names.remove('Play Tennis') 
 print("Predicting Attributes:", attribute_names)
-
 tree = id3(df_tennis, 'Play Tennis', attribute_names)
 print("\n\nThe Resultant Decision Tree is :\n")
 pprint(tree)
