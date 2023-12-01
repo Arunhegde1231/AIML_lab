@@ -19,11 +19,7 @@ total_entropy = entropy_of_list(df_tennis['Play Tennis'])
 print("Entropy of given PlayTennis Data Set:", total_entropy)
 
 def information_gain(df, split_attribute_name, target_attribute_name, trace=0):
-    df_split = df.groupby(split_attribute_name)
-    '''
- Takes a DataFrame of attributes,and quantifies the entropy of a target
- attribute after performing a split along the values of another attribute.
- '''  
+    df_split = df.groupby(split_attribute_name) 
     nobs = len(df.index) * 1.0
     df_agg_ent = df_split.agg({target_attribute_name: [entropy_of_list, lambda x: len(x) / nobs]})[
         target_attribute_name]
