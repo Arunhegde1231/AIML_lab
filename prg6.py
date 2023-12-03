@@ -11,7 +11,7 @@ gnb=GaussianNB()
 classifier=gnb.fit(x_train,y_train)
 y_pred=classifier.predict(x_test)
 
-print("accuracy matrices : " ,metrics.classification_report(y_test,y_pred))
+print("accuracy matrices : \n" ,metrics.classification_report(y_test,y_pred))
 print("accuracy of matrices is : ", metrics.accuracy_score(y_test,y_pred))
 print("confusion matrix ")
 print("accuracy matrices : ", metrics.confusion_matrix(y_test,y_pred))
