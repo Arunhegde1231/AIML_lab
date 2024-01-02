@@ -77,7 +77,7 @@ def getAccuracy(testSet, predictions):
             correct += 1
     return (correct / float(len(testSet))) * 100.0
 
-f = open('p6.csv') 
+f = open('prg6.csv') 
 lines = csv.reader(f)
 dataset = list(lines)
 for i in range(len(dataset)):
