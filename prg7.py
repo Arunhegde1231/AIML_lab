@@ -21,12 +21,14 @@ plt.scatter(X.Petal_Length, X.Petal_Width, c=colormap[y.Targets], s=40)
 plt.title('Real Clusters')
 plt.xlabel('Petal Length') 
 plt.ylabel('Petal Width')
+plt.show()
 
 plt.subplot(1, 3, 2)
 plt.scatter(X.Petal_Length, X.Petal_Width, c=colormap[model.labels_], s=40) 
 plt.title('K-Means Clustering')
 plt.xlabel('Petal Length') 
 plt.ylabel('Petal Width')
+plt.show()
 
 from sklearn import preprocessing
 
@@ -42,5 +44,6 @@ plt.scatter(X.Petal_Length, X.Petal_Width, c=colormap[0], s=40)
 plt.title('GMM Clustering')
 plt.xlabel('Petal Length') 
 plt.ylabel('Petal Width')
+plt.show()
 
 print('Observation: The GMM using EM algorithm based clustering matched the true labels more closely than the Kmeans.')
