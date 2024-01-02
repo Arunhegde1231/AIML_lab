@@ -27,6 +27,7 @@ for i in range(epoch):
     hinp1=np.dot(X,wh)
     hinp=hinp1 + bh
     hlayer_act = sigmoid(hinp)
+    
     outinp1=np.dot(hlayer_act,wout)
     outinp= outinp1+ bout
     output = sigmoid(outinp)
@@ -34,8 +35,8 @@ for i in range(epoch):
     EO = y-output
     outgrad = derivatives_sigmoid(output)
     d_output = EO* outgrad
+    
     EH = d_output.dot(wout.T)
-
     hiddengrad = derivatives_sigmoid(hlayer_act)
     d_hiddenlayer = EH * hiddengrad
     
