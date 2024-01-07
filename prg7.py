@@ -4,7 +4,7 @@ from sklearn.cluster import KMeans
 import pandas as pd
 import numpy as np
 
-iris = datasets.load_iris()
+iris = datasets.load_iris()   
 X = pd.DataFrame(iris.data)
 X.columns = ['Sepal_Length','Sepal_Width','Petal_Length','Petal_Width'] 
 y = pd.DataFrame(iris.target)
@@ -39,8 +39,9 @@ xs = pd.DataFrame(xsa, columns = X.columns)
 from sklearn.mixture import GaussianMixture 
 gmm = GaussianMixture(n_components=40) 
 gmm.fit(xs)
+y_gmm=gmm.predict(xs)
 plt.subplot(1, 3, 3)
-plt.scatter(X.Petal_Length, X.Petal_Width, c=colormap[0], s=40) 
+plt.scatter(X.Petal_Length, X.Petal_Width, c=colormap[y_gmm], s=40) 
 plt.title('GMM Clustering')
 plt.xlabel('Petal Length') 
 plt.ylabel('Petal Width')
